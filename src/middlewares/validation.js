@@ -1,4 +1,9 @@
-import { registerSchema, loginSchema } from '../utils/schema.js';
+import {
+	registerSchema,
+	loginSchema,
+	categorySchema,
+	AllSchema,
+} from '../utils/schema.js';
 
 const validateBody = (schema) => {
 	return (req, res, next) => {
@@ -10,7 +15,21 @@ const validateBody = (schema) => {
 	};
 };
 
+const validateParams = (schema, string) => {
+	return (req, res, next) => {
+		let obj = {};
+		obj[`${string}`] = req.params[`${string}`];
+		const { error } = schema.validate(obj);
+		if (error) {
+			next(new Error(error.details[0].message));
+		}
+		next();
+	};
+};
+
 const validateRegister = validateBody(registerSchema);
 const validateLogin = validateBody(loginSchema);
+const validateCategory = validateBody(categorySchema);
+const validateId = validateParams(AllSchema.params, 'id');
 
-export { validateRegister, validateLogin };
+export { validateRegister, validateLogin, validateCategory, validateId };
