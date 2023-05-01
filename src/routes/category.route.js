@@ -5,7 +5,7 @@ import {
 	findCategory,
 	updateCategory,
 	deleteCategory,
-} from '../controllers/categoryController.js';
+} from '../controllers/category.controller.js';
 import { validateCategory, validateId } from '../middlewares/validation.js';
 
 const router = Router();

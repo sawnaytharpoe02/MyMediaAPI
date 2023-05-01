@@ -4,7 +4,7 @@ import {
 	findCategoryService,
 	updateCategoryService,
 	deleteCategoryService,
-} from '../services/categoryService.js';
+} from '../services/category.services.js';
 
 import formatMessage from '../utils/format.js';
 import { HTTP_STATUS_CODES } from '../utils/interface.js';

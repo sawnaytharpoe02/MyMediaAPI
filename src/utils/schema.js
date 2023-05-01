@@ -23,4 +23,7 @@ export const AllSchema = {
 			.regex(/^[0-9a-fA-F]{24}$/)
 			.required(),
 	}),
+	image: Joi.object({
+		name: Joi.string().required(),
+	}),
 };

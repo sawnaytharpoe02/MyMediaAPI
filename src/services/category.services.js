@@ -1,5 +1,4 @@
-import Cat from '../models/categoryModel.js';
-import User from '../models/userModel.js';
+import Cat from '../models/category.model.js';
 
 const findAllCategoriesService = async () => {
 	try {
