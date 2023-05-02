@@ -17,6 +17,16 @@ export const categorySchema = Joi.object({
 	desc: Joi.string().required(),
 });
 
+export const postSchema = Joi.object({
+	category: Joi.string()
+		.regex(/^[0-9a-fA-F]{24}$/)
+		.required(),
+	title: Joi.string().required(),
+	content: Joi.string().required(),
+	image: Joi.string().required(),
+	user: Joi.optional(),
+});
+
 export const AllSchema = {
 	params: Joi.object({
 		id: Joi.string()

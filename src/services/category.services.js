@@ -37,6 +37,10 @@ const findCategoryService = async (id) => {
 
 const updateCategoryService = async (catData, id) => {
 	try {
+		const cat = await Cat.findById(id);
+		if (!cat) {
+			throw new Error(`there is no id: ${id} to update cat`);
+		}
 		const options = { new: true, upsert: true };
 		return await Cat.findByIdAndUpdate(id, catData, options);
 	} catch (err) {
@@ -46,6 +50,10 @@ const updateCategoryService = async (catData, id) => {
 
 const deleteCategoryService = async (id) => {
 	try {
+		const cat = await Cat.findById(id);
+		if (!cat) {
+			throw new Error(`there is no id: ${id} to delete cat`);
+		}
 		return await Cat.findByIdAndDelete(id);
 	} catch (err) {
 		throw new Error(err);

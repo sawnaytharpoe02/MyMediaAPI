@@ -3,6 +3,7 @@ import {
 	loginSchema,
 	categorySchema,
 	AllSchema,
+	postSchema,
 } from '../utils/schema.js';
 
 const validateBody = (schema) => {
@@ -31,5 +32,12 @@ const validateRegister = validateBody(registerSchema);
 const validateLogin = validateBody(loginSchema);
 const validateCategory = validateBody(categorySchema);
 const validateId = validateParams(AllSchema.params, 'id');
+const validatePost = validateBody(postSchema);
 
-export { validateRegister, validateLogin, validateCategory, validateId };
+export {
+	validateRegister,
+	validateLogin,
+	validateCategory,
+	validateId,
+	validatePost,
+};

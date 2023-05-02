@@ -43,7 +43,7 @@ const userLoginService = async (userData) => {
 			let userObj = userEmail.toObject();
 			delete userObj.password;
 			const generateToken = jwt.sign(userObj, process.env.JWT_SECRET_KEY, {
-				expiresIn: '1h',
+				expiresIn: '24hr',
 			});
 			userObj.token = generateToken;
 			return userObj;

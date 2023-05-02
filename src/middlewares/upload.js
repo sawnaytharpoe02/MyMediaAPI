@@ -1,12 +1,7 @@
 const saveImage = (req, res, next) => {
 	const file = req.files.img;
 	const filename = new Date().valueOf() + '_' + file.name;
-	file.mv(`./uploads/${filename}`, (err) => {
-		if (err) {
-			next(new Error(err));
-		}
-		res.send('File uploaded');
-	});
+	file.mv(`./uploads/${filename}`);
 	req.body['image'] = filename;
 	next();
 };
@@ -16,13 +11,7 @@ const saveMultiImage = (req, res, next) => {
 	let filenames = [];
 	files.forEach((file) => {
 		const filename = new Date().valueOf() + '_' + file.name;
-		file.mv(`./uploads/${filename}`, (err) => {
-			if (err) {
-				next(new Error(err));
-			}
-			res.send('File uploaded');
-		});
-
+		file.mv(`./uploads/${filename}`);
 		filenames.push(filename);
 	});
 
