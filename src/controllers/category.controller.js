@@ -68,7 +68,7 @@ const updateCategory = async (req, res, next) => {
 const deleteCategory = async (req, res, next) => {
 	try {
 		const cat = await deleteCategoryService(req.params.id);
-		formatMessage(res, HTTP_STATUS_CODES.OK, `delete category id ${cat._id}`);
+		formatMessage(res, HTTP_STATUS_CODES.OK, `delete category id ${cat._id}`, cat);
 	} catch (err) {
 		next(new Error(`Failed to delete category: ${err}`));
 	}

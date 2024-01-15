@@ -25,7 +25,7 @@ const userLogin = async (req, res, next) => {
 		formatMessage(
 			res,
 			HTTP_STATUS_CODES.OK,
-			'user register successfully',
+			'user login successfully',
 			user
 		);
 	} catch (err) {

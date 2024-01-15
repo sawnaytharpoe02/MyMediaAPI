@@ -4,6 +4,7 @@ import {
 	categorySchema,
 	AllSchema,
 	postSchema,
+  tagSchema
 } from '../utils/schema.js';
 
 const validateBody = (schema) => {
@@ -33,6 +34,7 @@ const validateLogin = validateBody(loginSchema);
 const validateCategory = validateBody(categorySchema);
 const validateId = validateParams(AllSchema.params, 'id');
 const validatePost = validateBody(postSchema);
+const validateTag = validateBody(tagSchema);
 
 export {
 	validateRegister,
@@ -40,4 +42,5 @@ export {
 	validateCategory,
 	validateId,
 	validatePost,
+  validateTag
 };
