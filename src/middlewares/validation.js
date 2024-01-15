@@ -33,14 +33,18 @@ const validateRegister = validateBody(registerSchema);
 const validateLogin = validateBody(loginSchema);
 const validateCategory = validateBody(categorySchema);
 const validateId = validateParams(AllSchema.params, 'id');
+const validatePage = validateParams(AllSchema.page, 'page');
 const validatePost = validateBody(postSchema);
 const validateTag = validateBody(tagSchema);
+const validateStatus = validateParams(AllSchema.status, 'status');
 
 export {
-	validateRegister,
-	validateLogin,
-	validateCategory,
-	validateId,
-	validatePost,
-  validateTag
+  validateRegister,
+  validateLogin,
+  validateCategory,
+  validateId,
+  validatePost,
+  validateTag,
+  validatePage,
+  validateStatus,
 };

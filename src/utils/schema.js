@@ -22,6 +22,9 @@ export const postSchema = Joi.object({
   category: Joi.string()
     .regex(/^[0-9a-fA-F]{24}$/)
     .required(),
+  tag: Joi.string()
+    .regex(/^[0-9a-fA-F]{24}$/)
+    .required(),
   title: Joi.string().required(),
   content: Joi.string().required(),
   image: Joi.string().required(),
@@ -42,5 +45,11 @@ export const AllSchema = {
   }),
   image: Joi.object({
     name: Joi.string().required(),
+  }),
+  page: Joi.object({
+    page: Joi.number().required(),
+  }),
+  status: Joi.object({
+    status: Joi.number().required(),
   }),
 };
